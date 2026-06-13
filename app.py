@@ -165,8 +165,7 @@ with aba_tipo:
         """,
         params,
     )
-    df["rotulo"] = df["Descricao"].str.slice(0, 45) + "…"
-    st.bar_chart(df.set_index("rotulo")["total"])
+    st.bar_chart(df.set_index("Descricao")["total"], horizontal=True)
     st.dataframe(df[["Descricao", "total", "excesso_medio"]],
                  width='stretch', hide_index=True)
 
